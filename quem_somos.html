@@ -1,0 +1,291 @@
+<!--
+author: W3layouts
+author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE html> {% load static %} {% load widget_tweaks %}
+<html lang="pt-br">
+
+<head>
+    <title>BokaBoka</title>
+    <!-- for-mobile-apps -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link id="favicon" rel="shortcut icon" href="{% static 'images/bokabokafavicon.png' %}" type="image/png">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="BokaBoka, pesquisa, profissão, profissional, 
+profissões, profissionais, buscar, serviços, perfil" />
+    <meta name="description" content="O bokaboka é um portal especializado em serviços autônomos. Fazemos a interação entre usuários e profissionais promovendo a melhor experiência a ambos" />
+    <meta name="google-site-verification" content="asE48YNEqW2fVIox4nMWSArj7JyVWvpK_ENLVpC4l0I" /> {% block head %}
+    <meta name="robots" content="noindex" /> {% endblock %}
+    <script type="application/x-javascript">
+        addEventListener("load", function() {
+            setTimeout(hideURLbar, 0);
+        }, false);
+
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        }
+    </script>
+    <!-- //for-mobile-apps -->
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" type="text/css" media="all" />
+    <link href="{% static 'css/style.min.css' %}" rel="stylesheet" type="text/css" media="all" />
+    <!-- js -->
+    <script type="text/javascript" src="{% static 'js/jquery-2.1.4.min.js' %}"></script>
+    <!-- //js -->
+    <link rel="stylesheet" href="{% static 'css/flexslider.min.css' %}" type="text/css" media="screen" property="" />
+    <link href="{% static 'css/popuo-box.min.css' %}" rel="stylesheet" type="text/css" media="all" />
+    <!-- font-awesome icons -->
+    <link href="https://fonts.googleapis.com/css?family=Rubik" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/paginator.css' %}">
+    <link rel="stylesheet" href="{% static 'css/meu_css_footer.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/page_quem_somos.min.css' %}">
+    <link href="https://fonts.googleapis.com/css?family=Jockey+One" rel="stylesheet">
+    <style>
+        .profissao_estilizada {
+            outline: none;
+            padding: 10px 10px 10px 60px;
+            font-size: 14px;
+            color: #212121;
+            border: 1px solid #999;
+            width: 100%;
+            background-color: #fafafa;
+        }
+        
+        .botao_estilizado {
+            background-color: #3fa395!important;
+            color: #fafafa!important;
+        }
+        
+        .botao_estilizado:hover {
+            transform: 0, 3;
+            background-color: #e57102!important;
+        }
+        
+        .titulo_em_cima_da_barra_de_busca {
+            font-size: 46px;
+            color: #fafafa;
+            font-family: 'Jockey One', sans-serif;
+            margin-top: 100px;
+            text-shadow: 2px 2px #000000;
+        }
+        
+        .paginador_ativo {
+            background-color: #00b098;
+            color: #fff;
+        }
+        
+        .paginador_ativo:hover {
+            background-color: #e57102;
+        }
+        
+        .caixa_media {
+            margin-top: 75px;
+        }
+        
+        .lista_profissoes_profissionais {
+            margin-top: -100px;
+        }
+        
+        .logo_estilizada {
+            height: 170px;
+        }
+        
+        .fundo_branco {
+            background-image: url({% static 'images/banner_fundo_branco.jpeg'%})!important;
+            width: 100%;
+            height: 500px;
+            background-size: 80% 700px;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            background-attachment: fixed;
+        }
+        
+        @media screen and (max-width: 1048px) {
+            .titulo_em_cima_da_barra_de_busca {
+                font-size: 35.5px;
+                font-family: 'Jockey One', sans-serif;
+                color: #fafafa;
+                margin-top: 100px;
+                text-shadow: 2px 2px #00beaa;
+            }
+            .fundo_branco {
+                background-image: url({% static 'images/banner_fundo_branco.jpeg'%})!important;
+                width: 100%;
+                height: 500px;
+                background-size: 80% 700px;
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: cover;
+                background-attachment: fixed;
+            }
+        }
+        
+        @media screen and (max-width: 768px) {
+            .titulo_em_cima_da_barra_de_busca {
+                font-size: 35.5px;
+                font-family: 'Jockey One', sans-serif;
+                color: #fafafa;
+                margin-top: 100px;
+                text-shadow: 2px 2px #00beaa;
+            }
+        }
+        
+        @media screen and (max-width: 430px) {
+            .titulo_em_cima_da_barra_de_busca {
+                font-size: 35.5px;
+                color: #fafafa;
+                margin-top: 20px;
+                text-shadow: 2px 2px #00beaa;
+                font-family: 'Jockey One', sans-serif;
+            }
+            .caixa_media {
+                padding-bottom: 150px;
+            }
+            .fundo_branco {
+                background-image: url({% static 'images/banner_fundo_branco_responsivo.jpeg' %})!important;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="div-info">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-sm-12">
+                    <p class="p-menu"><img class="icon-menu" src="{% static 'images/letter.png' %}" alt="Envelope"> contato@bokaboka.net</p>
+                </div>
+                <div class="col-md-6 col-sm-12 text-center">
+                    <a href="https://www.facebook.com/bokabokaoficial/"><img class="social-menu" src="{% static 'images/facebook.png' %}" alt="Incone do Facebook"></a>
+                    <a href="https://www.instagram.com/bokabokaoficial/"><img class="social-menu" style="margin-right:3%;" src="{% static 'images/instagram.png' %}" alt="Incone do Instagram"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- banner -->
+    <div class="banner fundo_branco">
+        <div class="container">
+            <nav class="navbar">
+                <div class="navbar-header navbar-left">
+                    <a id="logo" class="navbar-brand" href="{% url 'core:home' %}">
+                        <img class="logo_estilizada logo-one" src="{% static 'images/bokaboka.png' %}">
+                    </a>
+                </div>
+                <div style="float: right;"><a class="a-menu" href="/">Início</a></div>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+            </nav>
+        </div>
+        <div class="container text-center div-menu-titulo">
+            <h1 class="h1-menu"><b>Quem Somos</b></h1>
+            <hr class="hr-menu" align="center" width="200">
+        </div>
+    </div>
+    <!-- //banner -->
+
+
+    <div class="div-info-qs">
+        <div class="container div-qs">
+            <br>
+            <p class="p-qs" style="">É sempre bom poder ajudar usuários a contratar pessoas de confiança e usufruir de serviços de alta qualidade. O Bokaboka surgiu justamente com essa função. Fazemos a interação entre usuários e profissionais promovendo a melhor experiência para ambos.<br><br>O Bokaboka é um portal especializado em serviços autônomos no qual a contratação se dá através dos índices de confiança de quem oferta o serviço. Afinal, boas experiências aumentam a avaliação do profissional e ajuda novos usuário a fazer uma boa contratação.<br><br>Atualmente, o Bokaboka oferece mais de 60 tipos de serviços disponíveis, entre eles estão profissionais das áreas de reformas, moda, beleza, assistência técnica, aulas, saúde entre outros.<br><br>O Bokaboka também investe continuamente em tecnologia para manter a segurança dos dados e a sua privacidade durante a navegação. Assim, promove o desempenho adequado para que sua experiência de navegação seja a mais agradável possível.</p>
+            <div class="row">
+                <div class="col-md-4 col-sm-12 text-center">
+                    <br>
+                    <img src="{% static 'images/mission.png' %}" alt="Incone de uma montanha" class="img-qs">
+                    <br>
+                    <h2 class="h-mvv">Missão</h2>
+                    <br>
+                    <p class="p-mvv">Promover a interação de serviços confiáveis para toda a população do Nordeste.</p>
+                    <p class="p-mvv">Ajudar nossos clientes a fazer contratações confiáveis de serviços de boa qualidade.</p>
+                    <p class="p-mvv">Ajudar os profissionais mais bem avaliados a encontrarem novos clientes .</p>
+                </div>
+                <div class="col-md-4 col-sm-12 text-center">
+                    <br>
+                    <img class="img-qs" src="{% static 'images/target.png' %}" alt="Incone de um tiro ao alvo">
+                    <br>
+                    <h2 class="h-mvv">Visão</h2>
+                    <br>
+                    <p class="p-mvv">Tornar-se a maior rede de interação de serviços autônomos do Nordeste, oferecendo contratações confiáveis para os usuários e expansão de negócios para o profissional liberal.</p>
+                </div>
+                <div class="col-md-4 col-sm-12 text-center">
+                    <br>
+                    <img class="img-qs" src="{% static 'images/lamp.png' %}" alt="Incone de uma lampada">
+                    <br>
+                    <h2 class="h-mvv">Valor</h2>
+                    <br>
+                    <p class="p-mvv">Inovação, honestidade, confiança, segurança, crescimento, determinação, superação, empatia e evolução contínua.</p>
+                </div>
+            </div>
+            <br>
+            <br>
+        </div>
+    </div>
+
+
+    <!-- NOVO FOOTER-->
+
+    <footer class="footer-one">
+        <h2 class="text-center h-footer"><b>Fale Conosco</b></h2>
+        <h4 class="text-center p-footer"> Estamos a sua disposição para lhe ajuda. Nos mande uma mensagem! :) </h4>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-sm-12">
+                    <form class="f-footer">
+                        <input class="form-control" type="text" name="Nome" placeholder="Nome" style="height: 45px;">
+                        <br>
+                        <input style="height: 45px;" class="form-control" type="tel" name="Telefone" placeholder="Telefone">
+                        <br>
+                        <input style="height: 45px;" class="form-control" type="email" name="E-mail" placeholder="E-mail">
+                        <br>
+                        <textarea style="height: 145px;" class="form-control" name="Mensagem" placeholder="Mensagem"></textarea>
+                        <br>
+                        <input type="submit" class="btn btn-lg btn-block botao">
+                    </form>
+                </div>
+                <div class="col-md-6 col-sm-12 i-footer">
+                    <h3 class="text-justify"><i class="fa fa-map-marker"></i> Endereço:</h3>
+                    <p class="p2-footer">Rua Moura Rabelo, 1945. Natal, Rn. Candelária.</p>
+                    <p class="p2-footer">CEP: 59064-480</p>
+                    <h3><i class="fa fa-envelope"></i> E-mail:</h3>
+                    <p class="p2-footer">contato@bokaboka.net</p>
+                    <h3><i class="fa fa-mobile"></i> Telefone:</h3>
+                    <p class="p2-footer">(84)99999-9999</p>
+                    <br>
+                    <div class="text-center">
+                        <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FBokaBokaOficial&tabs&width=340&height=121&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" width="100%" height="121" style="border:none;overflow:hidden"
+                            scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div class="footer">
+        <p>Copyright © 2018 <a href="http://www.ejectufrn.com.br/" target="_blank">EJECT</a></p>
+    </div>
+    <!-- for bootstrap working -->
+    <script src="{% static 'js/bootstrap.js' %}"></script>
+    <!-- //for bootstrap working -->
+    <!-- start-smooth-scrolling -->
+    <script type="text/javascript" src="{% static 'js/move-top.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/easing.js' %}"></script>
+    <script src="{% static 'js/paginator.js' %}"></script>
+    <script src="{% static 'js/mask-cpf-cnpj.js' %}"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-114847115-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-114847115-1');
+    </script>
+</body>
+
+</html>
